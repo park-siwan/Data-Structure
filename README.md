@@ -3,7 +3,7 @@
 
 1. [개요](#개요)
 2. [자료구조의 효율성](#자료구조의-효율성)
-3. [RAM](#ram-:-random-access-memory)
+3. [RAM : Random Access Memory](#ram-:-random-access-memory)
 ---
 
 ## **개요**
