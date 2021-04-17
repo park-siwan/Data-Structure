@@ -17,12 +17,10 @@ class LinkedList:
         """링크드 리스트에서 탐색 연산 메소드. 단, 해당 노드가 없으면 None을 리턴한다"""
 
         iterator = self.head
-        while iterator:
-            if iterator.data is data:
+        while iterator is not None:
+            if iterator.data == data:
                 return iterator
-            else:
-                iterator = iterator.next
-        return None
+            iterator = iterator.next
 
     def append(self, data):
         """링크드 리스트 추가 연산 메소드"""
