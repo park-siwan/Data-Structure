@@ -18,12 +18,18 @@ class CustomerServiceCenter:
 
     def process_complaint(self):
         """접수된 고객 센터 문의 내용 처리하는 메소드"""
-        # 코드를 쓰세요
+        if self.queue:
+
+            # 가장 오래된 문의 먼저 처리
+            complaint = self.queue.popleft()
+            print(f'{complaint.name}님의 {complaint.content} 문의 내용 접수 되었습니다. 담당자가 배정되면 {complaint.email}로 연락드리겠습니다!')
+        else:
+            print('더 이상 대기 중인 문의가 없습니다!')
 
     def add_complaint(self, name, email, content):
         """새로운 문의를 큐에 추가 시켜주는 메소드"""
-        # 코드를 쓰세요
-
+        new_complaint = CustomerComplaint(name, email, content)
+        self.queue.append(new_complaint)  # 문의 대기 큐에 추가 시켜준다
 
 # 고객 문의 센터 인스턴스 생성
 center = CustomerServiceCenter()
